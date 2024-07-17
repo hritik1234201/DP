@@ -1,0 +1,363 @@
+    /*
+ Theme Name: Bitz Child
+ Theme URI: http://themeforest.net/item/bitz-news-publishing-theme/13542402
+ Description: Child theme of Bitz WordPress theme available exclusively on Theme Forest.
+ Author: MNKY
+ Author URI: http://themeforest.net/user/MNKY
+ Template:     bitz
+ Version:      1.0.0
+ License: Envato Marketplaces Split Licence
+ License URI: Envato Marketplace Item License Certificate
+ Tags: theme-options, translation-ready, rtl-language-support, post-formats, microformats, full-width-template, custom-colors, left-sidebar, right-sidebar, fluid-layout
+ Text Domain:  bitz-child
+*/
+
+
+ul.navbar-nav.navbar-right {
+    float: right !important;
+    /* margin-right: -8px !important; */
+    /* margin-top: -3px !important; */
+}
+
+.footer-sidebar .widget {
+    margin-bottom: 0;
+}
+
+
+/* Check box style */
+
+.page-template-page-subscribe-php #wrapper{
+    background: #ebebeb !important;
+}
+
+.page-template-page-subscribe-php #main{
+    background: #ebebeb !important;
+}
+
+.unsub-group.td-pb-span12 {
+    border: 1px solid #818181;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+
+/* toast Css */
+
+.toast-info {
+    background-color: #00C89E !important;
+}
+#toast-container>div {
+    padding-left: 50px !important;
+}
+#toast-container>div {
+    width: 380px !important;
+    opacity: .92 !important;
+}
+#toast-container>div {
+    width: 380px !important;
+    opacity: .92 !important;
+}
+#toast-container>div:hover {
+    opacity: 1 !important;
+}
+.toast-success {
+    background-color: #51A351 !important;
+}
+.toast-error {
+    background-color: #BD362F !important;
+}
+
+/* toast Css */
+
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #ffffff;
+    background-color: #c53f45;
+    border-color: #f5c6cb;
+}
+
+/* Button Disabled */
+
+button:disabled {
+    opacity: 0.6;
+}
+
+
+
+/* Subscribe Textbox and Button */
+
+#subscribe-same-col{
+    display: flex;
+}
+
+#textbox-field{
+    width:60%;
+}
+
+#sub-button-filed{
+    width:40%
+}
+
+/* Subscribe Textbox and Button */
+
+
+/* Subscribe Error Messgae */
+
+div#validate_email_error_1 {
+    color: red;
+}
+
+/* Subscribe Error Messgae */
+
+/* Myaccount Page */
+/* .ur-form-grid.my-account-content-block.my-account-email-preferences {
+    width: 95%;
+}
+
+form.user-registration-downloads.my-downloads.my-account-content-block {
+    width: 95%;
+} */
+
+/* Myaccount Page */
+
+/* Sign Magic link align */
+
+#magic-same-line{
+    display: flex;	
+    margin-right: 20px;
+}
+
+/* Sign Magic link align */
+
+
+
+.page-id-2808 #main {
+    background: #ebebeb !important;
+}
+
+
+
+/* Login Page New Design Code */
+
+.page-template-Sign-in #main {
+    background: #ebebeb !important;
+}
+
+.page-template-Sign-in .page-header{
+    background: #ebebeb !important;
+}
+
+.page-template-Sign-in #main{
+
+    background: #ebebeb !important;
+}
+
+.page-template-Sign-in .vc_col-lg-12{
+    background:#f9f9f9 !important;
+}
+
+.page-template-Sign-in #wrapper{
+    background: #ebebeb !important;
+}
+
+.page-template-Sign-in .page-header1 h1{
+    font-size: 28px !important;
+    text-transform: capitalize !important;
+    padding: 20px 0px 0px 15px !important;
+    margin-bottom: 0px !important;
+}
+.page-template-Sign-in .page-header{
+    visibility: hidden !important;
+}
+
+#wpa-submit{
+    border:2px solid #052F85 !important;
+    color:#ffffff !important;
+    height: 40px !important;
+    width: 100% !important;
+    padding: 9px 2px 9px 2px !important;
+}
+
+/* Login Page New Design Code */
+
+
+.custom-code p.user-registration-form-row {
+    margin-bottom: 23px !important;
+    position: relative;
+}
+
+
+
+
+#user-registration.vertical .user-registration-MyAccount-navigation{
+	background: #009eed !important;
+}
+
+
+li.user-registration-MyAccount-navigation-link a{
+	color: #ffffff !important;
+    text-transform: uppercase !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+}
+
+#user-registration.vertical .user-registration-MyAccount-navigation ul .user-registration-MyAccount-navigation-link.is-active a {
+    background: #052f85 !important;
+    border-color: #475bb2 !important;
+}
+
+/*Header*/
+#top-bar .widget-container {
+    margin-right: 10px !important;
+}
+#top-bar .social-icons-twt {
+    margin-top: 10px;
+}
+
+#top-bar .social-icons-twt a i:before {
+    color: #505050;
+}
+
+.fa-globe.fa-top-header {
+    font-size: 16px;
+}
+#menu-item-3011 .fa-chevron-down {    
+    margin-top: -2px;
+    font-size: 12px;
+
+}
+
+/*#menu-item-3010 {
+    padding-right: 0 !important;
+}
+
+#menu-item-3009 {
+    padding-left: 0 !important;
+}*/
+
+/*News Page*/
+.news.type-news .meta-author-image, .news.type-news .meta-author.url {
+    display: none;
+}
+
+/*Resource Page*/
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/*General*/
+.views-hot {
+    color: #CB0404;
+}
+
+
+.wp-block-audio audio{
+	width:40% !important;
+}
+
+.td-module-date123 {
+text-transform: capitalize !important;
+    color: #c53f45 !important;
+    font-size: 11px;
+	margin-top:-20px;
+}
+
+.mp-date time{
+	text-transform: none !important;
+    color: #c53f45 !important;
+    font-size: 11px;
+}
+
+
+.vc_custom_heading.custom-hover.vc_gitem-post-data.vc_gitem-post-data-source-post_title a:hover {
+    color: #052f85;
+}
+
+.vc_custom_heading.custom-hover.vc_gitem-post-data.vc_gitem-post-data-source-post_title{
+	margin-bottom:8px;
+}
+
+.vc_custom_heading.custom-hover.vc_gitem-post-data.vc_gitem-post-data-source-post_title a {
+    font-weight:bold;
+}
+
+.vc_custom_heading.custom-hover div{
+	line-height:20px;
+}
+
+.home #main{
+	padding:0px 30px 50px;
+}
+
+.left-align {
+    text-align: left !important;
+    margin-bottom: 0px;
+}
+
+.vc_custom_heading.expect-custom.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt {
+    line-height: 23px;
+}
+
+
+ul#menu-top-bar-menu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.entry-header h5{
+    color: rgb(0 0 0 / 0%)!important;
+    }
+
+.entry-header h5 a {
+        vertical-align: bottom;
+        background-color: #e74c3c;
+        display: inline-block;
+        line-height: 1;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 5px 10px;
+        margin-right: 5px;
+        color: #fff;
+        border-radius: 2px;
+        transition: background .15s;
+    }
+
+
+    #mobile-site-navigation ul li.menu-item-has-children > span{
+        display: none !important;
+    }
+
+
+    .heading_wrapper h2{
+        text-transform: capitalize !important;
+    }
+
+    #mobile-site-header #mobile-site-logo img{
+        height: 60px !important;
+    }
+
+    div#comments {
+        display: none;
+    }
+
+#privacy_policy{display:none;margin-bottom: 20px;margin-top:0px;font-size:11px;line-height: 1.5;}
+
+.Sponsored_name{font-size: 11px;font-style: italic;margin-top: 50px;}
