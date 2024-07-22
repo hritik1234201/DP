@@ -1,0 +1,162 @@
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://graph.facebook.com/v16.0/techversions/insights?metric=page_daily_follows_unique,page_post_engagements,page_impressions&access_token=EAAMZCKEprZBWgBAP6YALBr1iT5ZBROZBaLzAH9qlZA60QvhIsFyGbPZBeMYzIOXxer030jkjH0XdVjm08ANOhNA8bFeM5PEUBGsyZC3VXfA7j5XowzGeT0OKsoV3ZAI32GV4QkC9VZAFrgkBw9GzTCzUKmVZAAZCP5UBYWYmigye49P5PknwlgPKKwsqPF0kwoZCEz4jyZB8hc5IipwZDZD",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_POSTFIELDS => "{}",
+));
+
+$err = curl_error($curl);
+
+$response = curl_exec($curl);
+$engagement = json_decode($response);
+//    echo '<pre>';
+//    print_r($engagement);
+//    echo '</pre>';
+$engagements = $followers = $impressions = array();
+$i = 0;
+//Group = 1. Followers 2. Impressions/Engagement
+foreach ($engagement->data as $key => $val) {
+    if ($val->name == 'page_daily_follows_unique') {
+        $followers[] = $val->values[1]->value;
+    } else if ($val->name == 'page_post_engagements') {
+        $engagements[] = $val->values[1]->value;
+    } else {
+        $impressions[] = $val->values[1]->value;
+    }
+}
+
+$page_follows_engagements = array(array(
+        'name' => 'Followers',
+        'data' => $followers,
+        'stack' => 'Followers',
+    ), array(
+        'name' => 'Post Engagement',
+        'data' => $engagements,
+        'stack' => 'Post Engagement',
+    ),
+    array(
+        'name' => 'Page Impressions',
+        'data' => $impressions,
+        'stack' => 'Post Impressions',
+    )
+);
+
+
+//    $curl = curl_init();
+//
+//    curl_setopt_array($curl, array(
+//        CURLOPT_URL => "https://graph.facebook.com/v16.0/techversions/insights?metric=page_impressions_unique&access_token=EAAMZCKEprZBWgBAP6YALBr1iT5ZBROZBaLzAH9qlZA60QvhIsFyGbPZBeMYzIOXxer030jkjH0XdVjm08ANOhNA8bFeM5PEUBGsyZC3VXfA7j5XowzGeT0OKsoV3ZAI32GV4QkC9VZAFrgkBw9GzTCzUKmVZAAZCP5UBYWYmigye49P5PknwlgPKKwsqPF0kwoZCEz4jyZB8hc5IipwZDZD",
+//        CURLOPT_RETURNTRANSFER => true,
+//        CURLOPT_ENCODING => "",
+//        CURLOPT_MAXREDIRS => 10,
+//        CURLOPT_TIMEOUT => 30,
+//        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//        CURLOPT_CUSTOMREQUEST => "GET",
+//        CURLOPT_POSTFIELDS => "{}",
+//    ));
+//
+//    $err = curl_error($curl);
+//
+//    $response = curl_exec($curl); 
+//    $impressions = json_decode($response);
+//    
+//    echo '<pre>';
+//    print_r($impressions);
+//    echo '</pre>';
+//    $impression_arr = array();
+//    foreach ($impressions->data as $impression) {
+//        
+//        $impression_arr[] = array(
+//            'name' => ($impression->period === 'days_28') ? 'Month' : $impression->period,
+//            'y' => $impression->values[1]->value,
+//        );
+//    }
+
+<script>
+// Facebook Post Impressions
+        // Data retrieved from https://netmarketshare.com
+        Highcharts.chart('fb_impressions_container', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Positive Feedbacks on Page by Type',
+                align: 'left',
+                decription: 'The number of times that people took a positive action, broken down by type.',
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: <?php echo json_encode($impression_arr); ?>
+                }]
+        });
+
+//Comparision Column Chart
+        var engagement_json = <?php echo json_encode($page_follows_engagements); ?>;
+        Highcharts.chart('container_facebook', {
+
+            chart: {
+                type: 'column'
+            },
+
+            title: {
+                text: 'Facebook Followers and Engagement',
+                align: 'left'
+            },
+
+            xAxis: {
+                categories: ['Day', 'Week', 'Month']
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Counts'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                            this.series.name + ': ' + this.y + '<br/>' +
+                            'Total: ' + this.point.stackTotal;
+                }
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: engagement_json
+        });
+</script>

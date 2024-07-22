@@ -1,0 +1,103 @@
+/*
+Theme Name:     Newspaper Child theme
+Theme URI: 		http://themeforest.net/user/tagDiv/portfolio
+Description:    Child theme made by tagDiv
+Author:         tagDiv
+Author URI: 	http://themeforest.net/user/tagDiv/portfolio
+Template:       Newspaper
+Version:        9.0c
+*/
+
+
+/*  ----------------------------------------------------------------------------
+    This file will load automatically when the child theme is active. You can use it
+    for custom CSS.
+*/
+
+
+@import url("../Newspaper/style.css");
+
+
+ul#menu-menu-1 li a{
+    text-transform: capitalize !important;
+}
+
+.top-header-menu > li.menu-item > a.menu-item{
+    text-transform: capitalize !important;
+}
+
+body.post-type-archive-white_papers .td-block-row,
+body.post-type-archive-e_books .td-block-row,
+body.post-type-archive-infographics .td-block-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body.post-type-archive-white_papers .td-block-row .td-block-span4,
+body.post-type-archive-e_books .td-block-row .td-block-span4,
+body.post-type-archive-infographics .td-block-row .td-block-span4{
+    display: flex !important;
+    flex: 1;
+    padding: 1em;
+}
+
+.widget.widget_nav_menu .block-title span{
+    text-transform: capitalize;
+    font-style:normal;
+}
+
+#menu-quick-links li a{
+    font-weight:300 !important;
+}
+
+#menu-quick-links{
+    margin-top: -16px;
+}
+
+body.home .home-trending-now .td-block-row .td-block-span4 .td-module-meta-info .td-post-date,
+body.home .home-resource-white-papers .td-meta-info-container .td-module-meta-info .td-post-date,
+body.home .home-resource-e-books .td-meta-info-container .td-module-meta-info .td-post-date{
+    display: none;
+}
+
+body.home .td-pulldown-size{
+    text-transform: capitalize;
+}
+
+.td-ss-main-sidebar .widget.widget_block #custom_html-10 .widget-title{
+    background-color: #04a353;
+    color: #fff;
+    padding: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+#comments{
+    display: none;
+}
+
+@media screen and (max-width: 426px) {
+    
+    body.post-type-archive-e_books .td-block-row,
+    body.post-type-archive-infographics .td-block-row,
+    body.post-type-archive-white_papers .td-block-row{
+        flex-direction: column;
+    }
+
+    body.post-type-archive-infographics .td-block-row .td-block-span4 .td-module-image .td-module-thumb a img.entry-thumb,
+    body.post-type-archive-e_books .td-block-row .td-block-span4 .td-module-image .td-module-thumb a img.entry-thumb,
+    body.post-type-archive-white_papers .td-block-row .td-block-span4 .td-module-image .td-module-thumb a img.entry-thumb{
+        height: auto !important;
+        width: auto !important;
+    }
+ 
+    body.post-type-archive-infographics .td-block-row .td-block-span4,
+    body.post-type-archive-e_books .td-block-row .td-block-span4,
+    body.post-type-archive-white_papers .td-block-row .td-block-span4{
+        padding: inherit !important;
+    }
+}
+
+.search-results .td-post-author-name{
+    display: none !important;
+}
